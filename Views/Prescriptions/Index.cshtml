@@ -1,0 +1,287 @@
+﻿@model IEnumerable<Hospital_Management_System.Models.Prescription>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Doctor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DoctorName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DoctorSpecialization)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Patient)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PatientName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PatientGender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PatientAge)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MedicalTest1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MedicalTest2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MedicalTest3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MedicalTest4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medicine1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Morning1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Afternoon1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Evening1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medicine2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Morning2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Afternoon2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Evening2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medicine3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Morning3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Afternoon3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Evening3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medicine4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Morning4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Afternoon4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Evening4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medicine5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Morning5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Afternoon5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Evening5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medicine6)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Morning6)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Afternoon6)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Evening6)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medicine7)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Morning7)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Afternoon7)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Evening7)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CheckUpAfterDays)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrescriptionAddDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DoctorTiming)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Doctor.BloodGroup)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoctorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoctorSpecialization)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Patient.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PatientName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PatientGender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PatientAge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MedicalTest1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MedicalTest2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MedicalTest3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MedicalTest4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Medicine1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Morning1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Afternoon1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Evening1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Medicine2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Morning2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Afternoon2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Evening2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Medicine3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Morning3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Afternoon3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Evening3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Medicine4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Morning4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Afternoon4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Evening4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Medicine5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Morning5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Afternoon5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Evening5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Medicine6)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Morning6)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Afternoon6)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Evening6)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Medicine7)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Morning7)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Afternoon7)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Evening7)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CheckUpAfterDays)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrescriptionAddDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoctorTiming)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
