@@ -29,5 +29,7 @@ namespace Hospital.Data
         public DbSet<Hospital_Management_System.Models.Prescription> Prescription { get; set; }
 
         public DbSet<Hospital_Management_System.Models.AmbulanceDriver> AmbulanceDriver { get; set; }
+
+        public DbSet<Hospital_Management_System.Models.Ambulance> Ambulance { get; set; }
     }
 }
