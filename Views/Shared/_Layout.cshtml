@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-primary border-bottom box-shadow mb-3 border border-info">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Hospital</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -18,25 +18,25 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        <li class="nav-item bg-primary text-white">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Patients" asp-action="Index">Patients</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Doctors" asp-action="Index">Doctors</a>
+                        <li class="nav-item text-white bg-secondary">
+                            <a class="nav-link text-white " asp-area="" asp-controller="Patients" asp-action="Index">Patients</a>
                         </li>
 
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Schedules" asp-action="Index">Schedules</a>
+                        <li class="nav-item text-white bg-warning">
+                            <a class="nav-link  text-white " asp-area="" asp-controller="Doctors" asp-action="Index">Doctors</a>
                         </li>
 
 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Reviews" asp-action="Index">Reviews</a>
+                        <li class="nav-item bg-info">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Schedules" asp-action="Index">Schedules</a>
+                        </li>
+
+
+                        <li class="nav-item bg-danger">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Reviews" asp-action="Index">Reviews</a>
                         </li>
                     </ul>
                 </div>
@@ -48,7 +48,7 @@
             @RenderBody()
         </main>
     </div>
-
+    <br />
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2022 - Hospital - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
