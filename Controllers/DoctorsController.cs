@@ -22,8 +22,7 @@ namespace Hospital.Controllers
         // GET: Doctors
         public async Task<IActionResult> Index()
         {
-            var hospitalContext = _context.Doctor.Include(d => d.Department);
-            return View(await hospitalContext.ToListAsync());
+            return View(await _context.Doctor.ToListAsync());
         }
 
         // GET: Doctors/Details/5
@@ -35,7 +34,6 @@ namespace Hospital.Controllers
             }
 
             var doctor = await _context.Doctor
-                .Include(d => d.Department)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (doctor == null)
             {
@@ -48,7 +46,6 @@ namespace Hospital.Controllers
         // GET: Doctors/Create
         public IActionResult Create()
         {
-            ViewData["DepartmentId"] = new SelectList(_context.Set<Department>(), "Id", "Description");
             return View();
         }
 
@@ -57,7 +54,7 @@ namespace Hospital.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ApplicationUserId,FullName,FirstName,LastName,EmailAddress,Designation,DepartmentId,Address,PhoneNo,ContactNo,Specialization,Gender,BloodGroup,DateOfBirth,Education,Status")] Doctor doctor)
+        public async Task<IActionResult> Create([Bind("Id,ApplicationUserId,FullName,FirstName,LastName,EmailAddress,Designation,Address,PhoneNo,ContactNo,Specialization,Gender,BloodGroup,DateOfBirth,Education,Status")] Doctor doctor)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +62,6 @@ namespace Hospital.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DepartmentId"] = new SelectList(_context.Set<Department>(), "Id", "Description", doctor.DepartmentId);
             return View(doctor);
         }
 
@@ -82,7 +78,6 @@ namespace Hospital.Controllers
             {
                 return NotFound();
             }
-            ViewData["DepartmentId"] = new SelectList(_context.Set<Department>(), "Id", "Description", doctor.DepartmentId);
             return View(doctor);
         }
 
@@ -91,7 +86,7 @@ namespace Hospital.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,ApplicationUserId,FullName,FirstName,LastName,EmailAddress,Designation,DepartmentId,Address,PhoneNo,ContactNo,Specialization,Gender,BloodGroup,DateOfBirth,Education,Status")] Doctor doctor)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ApplicationUserId,FullName,FirstName,LastName,EmailAddress,Designation,Address,PhoneNo,ContactNo,Specialization,Gender,BloodGroup,DateOfBirth,Education,Status")] Doctor doctor)
         {
             if (id != doctor.Id)
             {
@@ -118,7 +113,6 @@ namespace Hospital.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DepartmentId"] = new SelectList(_context.Set<Department>(), "Id", "Description", doctor.DepartmentId);
             return View(doctor);
         }
 
@@ -131,7 +125,6 @@ namespace Hospital.Controllers
             }
 
             var doctor = await _context.Doctor
-                .Include(d => d.Department)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (doctor == null)
             {
