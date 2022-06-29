@@ -22,7 +22,5 @@ namespace Hospital_Management_System.Models
 
         [Required]
         public string Message { get; set; }
-
-        public Patient Patient { get; set; }
     }
 }
