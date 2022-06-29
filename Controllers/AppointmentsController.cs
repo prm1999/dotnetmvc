@@ -10,22 +10,23 @@ using Hospital_Management_System.Models;
 
 namespace Hospital.Controllers
 {
-    public class DoctorsController : Controller
+    public class AppointmentsController : Controller
     {
         private readonly HospitalContext _context;
 
-        public DoctorsController(HospitalContext context)
+        public AppointmentsController(HospitalContext context)
         {
             _context = context;
         }
 
-        // GET: Doctors
+        // GET: Appointments
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Doctor.ToListAsync());
+            var hospitalContext = _context.Appointment.Include(a => a.Doctor).Include(a => a.Patient);
+            return View(await hospitalContext.ToListAsync());
         }
 
-        // GET: Doctors/Details/5
+        // GET: Appointments/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +34,45 @@ namespace Hospital.Controllers
                 return NotFound();
             }
 
-            var doctor = await _context.Doctor
+            var appointment = await _context.Appointment
+                .Include(a => a.Doctor)
+                .Include(a => a.Patient)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (doctor == null)
+            if (appointment == null)
             {
                 return NotFound();
             }
 
-            return View(doctor);
+            return View(appointment);
         }
 
-        // GET: Doctors/Create
+        // GET: Appointments/Create
         public IActionResult Create()
         {
+            ViewData["DoctorId"] = new SelectList(_context.Doctor, "Id", "BloodGroup");
+            ViewData["PatientId"] = new SelectList(_context.Patient, "Id", "FirstName");
             return View();
         }
 
-        // POST: Doctors/Create
+        // POST: Appointments/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,DoctorId,FullName,FirstName,LastName,EmailAddress,Designation,Address,PhoneNo,ContactNo,Specialization,Gender,BloodGroup,DateOfBirth,Education,Status")] Doctor doctor)
+        public async Task<IActionResult> Create([Bind("Id,PatientId,DoctorId,AppointmentDate,Problem,Status")] Appointment appointment)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(doctor);
+                _context.Add(appointment);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(doctor);
+            ViewData["DoctorId"] = new SelectList(_context.Doctor, "Id", "BloodGroup", appointment.DoctorId);
+            ViewData["PatientId"] = new SelectList(_context.Patient, "Id", "FirstName", appointment.PatientId);
+            return View(appointment);
         }
 
-        // GET: Doctors/Edit/5
+        // GET: Appointments/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +80,24 @@ namespace Hospital.Controllers
                 return NotFound();
             }
 
-            var doctor = await _context.Doctor.FindAsync(id);
-            if (doctor == null)
+            var appointment = await _context.Appointment.FindAsync(id);
+            if (appointment == null)
             {
                 return NotFound();
             }
-            return View(doctor);
+            ViewData["DoctorId"] = new SelectList(_context.Doctor, "Id", "BloodGroup", appointment.DoctorId);
+            ViewData["PatientId"] = new SelectList(_context.Patient, "Id", "FirstName", appointment.PatientId);
+            return View(appointment);
         }
 
-        // POST: Doctors/Edit/5
+        // POST: Appointments/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,DoctorId,FullName,FirstName,LastName,EmailAddress,Designation,Address,PhoneNo,ContactNo,Specialization,Gender,BloodGroup,DateOfBirth,Education,Status")] Doctor doctor)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,PatientId,DoctorId,AppointmentDate,Problem,Status")] Appointment appointment)
         {
-            if (id != doctor.Id)
+            if (id != appointment.Id)
             {
                 return NotFound();
             }
@@ -97,12 +106,12 @@ namespace Hospital.Controllers
             {
                 try
                 {
-                    _context.Update(doctor);
+                    _context.Update(appointment);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!DoctorExists(doctor.Id))
+                    if (!AppointmentExists(appointment.Id))
                     {
                         return NotFound();
                     }
@@ -113,10 +122,12 @@ namespace Hospital.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(doctor);
+            ViewData["DoctorId"] = new SelectList(_context.Doctor, "Id", "BloodGroup", appointment.DoctorId);
+            ViewData["PatientId"] = new SelectList(_context.Patient, "Id", "FirstName", appointment.PatientId);
+            return View(appointment);
         }
 
-        // GET: Doctors/Delete/5
+        // GET: Appointments/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,30 +135,32 @@ namespace Hospital.Controllers
                 return NotFound();
             }
 
-            var doctor = await _context.Doctor
+            var appointment = await _context.Appointment
+                .Include(a => a.Doctor)
+                .Include(a => a.Patient)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (doctor == null)
+            if (appointment == null)
             {
                 return NotFound();
             }
 
-            return View(doctor);
+            return View(appointment);
         }
 
-        // POST: Doctors/Delete/5
+        // POST: Appointments/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var doctor = await _context.Doctor.FindAsync(id);
-            _context.Doctor.Remove(doctor);
+            var appointment = await _context.Appointment.FindAsync(id);
+            _context.Appointment.Remove(appointment);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool DoctorExists(int id)
+        private bool AppointmentExists(int id)
         {
-            return _context.Doctor.Any(e => e.Id == id);
+            return _context.Appointment.Any(e => e.Id == id);
         }
     }
 }

@@ -2,26 +2,19 @@
 
 @{
     ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<h1>Index</h1>
 
-<div class="card  bg-success mb-3" style="max-width: 9rem;">
-    <h1>Index</h1>
-</div>
-
-
-
-
-<div class="btn btn-light btn-lg">
+<p>
     <a asp-action="Create">Create New</a>
-</div>
-    
-
+</p>
 <table class="table">
-    <thead  class="table-success">
+    <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ApplicationUserId)
+                @Html.DisplayNameFor(model => model.PatientId)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.FirstName)
@@ -56,11 +49,11 @@
             <th></th>
         </tr>
     </thead>
-    <tbody class="table table-striped bg-warning border-dark">
+    <tbody>
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.ApplicationUserId)
+                @Html.DisplayFor(modelItem => item.PatientId)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FirstName)

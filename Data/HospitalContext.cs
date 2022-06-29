@@ -31,5 +31,9 @@ namespace Hospital.Data
         public DbSet<Hospital_Management_System.Models.AmbulanceDriver> AmbulanceDriver { get; set; }
 
         public DbSet<Hospital_Management_System.Models.Ambulance> Ambulance { get; set; }
+
+        public DbSet<Hospital_Management_System.Models.Announcement> Announcement { get; set; }
+
+        public DbSet<Hospital_Management_System.Models.Appointment> Appointment { get; set; }
     }
 }
