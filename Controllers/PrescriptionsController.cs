@@ -59,7 +59,7 @@ namespace Hospital.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,DoctorId,DoctorName,DoctorSpecialization,PatientId,UserName,PatientName,PatientGender,PatientAge,MedicalTest1,MedicalTest2,MedicalTest3,MedicalTest4,Medicine1,Morning1,Afternoon1,Evening1,Medicine2,Morning2,Afternoon2,Evening2,Medicine3,Morning3,Afternoon3,Evening3,Medicine4,Morning4,Afternoon4,Evening4,Medicine5,Morning5,Afternoon5,Evening5,Medicine6,Morning6,Afternoon6,Evening6,Medicine7,Morning7,Afternoon7,Evening7,CheckUpAfterDays,PrescriptionAddDate,DoctorTiming")] Prescription prescription)
+        public async Task<IActionResult> Create([Bind("Id,DoctorId,DoctorName,DoctorSpecialization,PatientId,UserName,PatientName,PatientGender,PatientAge,MedicalTest1,MedicalTest2,MedicalTest3,MedicalTest4,Medicine1,Morning1,Afternoon1,Evening1,Medicine2,Morning2,Afternoon2,Evening2,Morning3,Afternoon3,Evening3,Morning4,Afternoon4,Evening4,Morning5,Afternoon5,Evening5,Morning6,Afternoon6,Evening6,Medicine7,Morning7,Afternoon7,Evening7,CheckUpAfterDays,PrescriptionAddDate,DoctorTiming")] Prescription prescription)
         {
             if (ModelState.IsValid)
             {
@@ -95,7 +95,7 @@ namespace Hospital.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,DoctorId,DoctorName,DoctorSpecialization,PatientId,UserName,PatientName,PatientGender,PatientAge,MedicalTest1,MedicalTest2,MedicalTest3,MedicalTest4,Medicine1,Morning1,Afternoon1,Evening1,Medicine2,Morning2,Afternoon2,Evening2,Medicine3,Morning3,Afternoon3,Evening3,Medicine4,Morning4,Afternoon4,Evening4,Medicine5,Morning5,Afternoon5,Evening5,Medicine6,Morning6,Afternoon6,Evening6,Medicine7,Morning7,Afternoon7,Evening7,CheckUpAfterDays,PrescriptionAddDate,DoctorTiming")] Prescription prescription)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,DoctorId,DoctorName,DoctorSpecialization,PatientId,UserName,PatientName,PatientGender,PatientAge,MedicalTest1,MedicalTest2,MedicalTest3,MedicalTest4,Medicine1,Morning1,Afternoon1,Evening1,Medicine2,Morning2,Afternoon2,Evening2,Morning3,Afternoon3,Evening3,Morning4,Afternoon4,Evening4,Morning5,Afternoon5,Evening5,Morning6,Afternoon6,Evening6,Medicine7,Morning7,Afternoon7,Evening7,CheckUpAfterDays,PrescriptionAddDate,DoctorTiming")] Prescription prescription)
         {
             if (id != prescription.Id)
             {

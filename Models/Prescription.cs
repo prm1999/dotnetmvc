@@ -43,22 +43,22 @@ namespace Hospital_Management_System.Models
         public bool Afternoon2 { get; set; }
         public bool Evening2 { get; set; }
 
-        public string Medicine3 { get; set; }
+        public Medicine Medicine3 { get; set; }
         public bool Morning3 { get; set; }
         public bool Afternoon3 { get; set; }
         public bool Evening3 { get; set; }
 
-        public string Medicine4 { get; set; }
+        public Medicine Medicine4 { get; set; }
         public bool Morning4 { get; set; }
         public bool Afternoon4 { get; set; }
         public bool Evening4 { get; set; }
 
-        public string Medicine5 { get; set; }
+        public Medicine Medicine5 { get; set; }
         public bool Morning5 { get; set; }
         public bool Afternoon5 { get; set; }
         public bool Evening5 { get; set; }
 
-        public string Medicine6 { get; set; }
+        public Medicine Medicine6 { get; set; }
         public bool Morning6 { get; set; }
         public bool Afternoon6 { get; set; }
         public bool Evening6 { get; set; }

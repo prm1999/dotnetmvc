@@ -10,22 +10,22 @@ using Hospital_Management_System.Models;
 
 namespace Hospital.Controllers
 {
-    public class DoctorsController : Controller
+    public class AnnouncementsController : Controller
     {
         private readonly HospitalContext _context;
 
-        public DoctorsController(HospitalContext context)
+        public AnnouncementsController(HospitalContext context)
         {
             _context = context;
         }
 
-        // GET: Doctors
+        // GET: Announcements
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Doctor.ToListAsync());
+            return View(await _context.Announcement.ToListAsync());
         }
 
-        // GET: Doctors/Details/5
+        // GET: Announcements/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +33,39 @@ namespace Hospital.Controllers
                 return NotFound();
             }
 
-            var doctor = await _context.Doctor
+            var announcement = await _context.Announcement
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (doctor == null)
+            if (announcement == null)
             {
                 return NotFound();
             }
 
-            return View(doctor);
+            return View(announcement);
         }
 
-        // GET: Doctors/Create
+        // GET: Announcements/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Doctors/Create
+        // POST: Announcements/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,DoctorId,FullName,FirstName,LastName,EmailAddress,Designation,Address,PhoneNo,ContactNo,Specialization,Gender,BloodGroup,DateOfBirth,Education,Status")] Doctor doctor)
+        public async Task<IActionResult> Create([Bind("Id,Announcements,AnnouncementFor,End")] Announcement announcement)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(doctor);
+                _context.Add(announcement);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(doctor);
+            return View(announcement);
         }
 
-        // GET: Doctors/Edit/5
+        // GET: Announcements/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +73,22 @@ namespace Hospital.Controllers
                 return NotFound();
             }
 
-            var doctor = await _context.Doctor.FindAsync(id);
-            if (doctor == null)
+            var announcement = await _context.Announcement.FindAsync(id);
+            if (announcement == null)
             {
                 return NotFound();
             }
-            return View(doctor);
+            return View(announcement);
         }
 
-        // POST: Doctors/Edit/5
+        // POST: Announcements/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,DoctorId,FullName,FirstName,LastName,EmailAddress,Designation,Address,PhoneNo,ContactNo,Specialization,Gender,BloodGroup,DateOfBirth,Education,Status")] Doctor doctor)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Announcements,AnnouncementFor,End")] Announcement announcement)
         {
-            if (id != doctor.Id)
+            if (id != announcement.Id)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace Hospital.Controllers
             {
                 try
                 {
-                    _context.Update(doctor);
+                    _context.Update(announcement);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!DoctorExists(doctor.Id))
+                    if (!AnnouncementExists(announcement.Id))
                     {
                         return NotFound();
                     }
@@ -113,10 +113,10 @@ namespace Hospital.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(doctor);
+            return View(announcement);
         }
 
-        // GET: Doctors/Delete/5
+        // GET: Announcements/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,30 +124,30 @@ namespace Hospital.Controllers
                 return NotFound();
             }
 
-            var doctor = await _context.Doctor
+            var announcement = await _context.Announcement
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (doctor == null)
+            if (announcement == null)
             {
                 return NotFound();
             }
 
-            return View(doctor);
+            return View(announcement);
         }
 
-        // POST: Doctors/Delete/5
+        // POST: Announcements/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var doctor = await _context.Doctor.FindAsync(id);
-            _context.Doctor.Remove(doctor);
+            var announcement = await _context.Announcement.FindAsync(id);
+            _context.Announcement.Remove(announcement);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool DoctorExists(int id)
+        private bool AnnouncementExists(int id)
         {
-            return _context.Doctor.Any(e => e.Id == id);
+            return _context.Announcement.Any(e => e.Id == id);
         }
     }
 }

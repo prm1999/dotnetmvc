@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Create</h1>
@@ -110,11 +111,6 @@
                     <input class="form-check-input" asp-for="Evening2" /> @Html.DisplayNameFor(model => model.Evening2)
                 </label>
             </div>
-            <div class="form-group">
-                <label asp-for="Medicine3" class="control-label"></label>
-                <input asp-for="Medicine3" class="form-control" />
-                <span asp-validation-for="Medicine3" class="text-danger"></span>
-            </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="Morning3" /> @Html.DisplayNameFor(model => model.Morning3)
@@ -129,11 +125,6 @@
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="Evening3" /> @Html.DisplayNameFor(model => model.Evening3)
                 </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="Medicine4" class="control-label"></label>
-                <input asp-for="Medicine4" class="form-control" />
-                <span asp-validation-for="Medicine4" class="text-danger"></span>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
@@ -150,11 +141,6 @@
                     <input class="form-check-input" asp-for="Evening4" /> @Html.DisplayNameFor(model => model.Evening4)
                 </label>
             </div>
-            <div class="form-group">
-                <label asp-for="Medicine5" class="control-label"></label>
-                <input asp-for="Medicine5" class="form-control" />
-                <span asp-validation-for="Medicine5" class="text-danger"></span>
-            </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="Morning5" /> @Html.DisplayNameFor(model => model.Morning5)
@@ -169,11 +155,6 @@
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="Evening5" /> @Html.DisplayNameFor(model => model.Evening5)
                 </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="Medicine6" class="control-label"></label>
-                <input asp-for="Medicine6" class="form-control" />
-                <span asp-validation-for="Medicine6" class="text-danger"></span>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">

@@ -11,7 +11,7 @@ namespace Hospital_Management_System.Models
         public int Id { get; set; }
 
         //public ApplicationUser ApplicationUser { get; set; }
-        public string ApplicationUserId { get; set; }
+        public string DoctorId { get; set; }
 
         public string FullName { get; set; }
 
