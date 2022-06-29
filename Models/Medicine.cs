@@ -8,7 +8,7 @@ namespace Hospital_Management_System.Models
 {
     public class Medicine
     {
-        public int MedicineId { get; set; }
+        public int Id { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]

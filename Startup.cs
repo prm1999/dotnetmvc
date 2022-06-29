@@ -29,8 +29,6 @@ namespace Hospital
 
             services.AddDbContext<HospitalContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("HospitalContext")));
-
-           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

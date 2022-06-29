@@ -8,9 +8,10 @@ namespace Hospital_Management_System.Models
 {
     public class Doctor
     {
-        public int DoctorId { get; set; }
+        public int Id { get; set; }
 
-        
+        //public ApplicationUser ApplicationUser { get; set; }
+        public string DoctorId { get; set; }
 
         public string FullName { get; set; }
 
