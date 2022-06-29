@@ -11,7 +11,9 @@ namespace Hospital_Management_System.Models
         public int Id { get; set; }
 
        // public ApplicationUser ApplicationUser { get; set; }
-        public string ApplicationUserId { get; set; }
+        public string PatientId { get; set; }
+
+        public Doctor Doctor { get; set; }
 
         [Required]
         [Display(Name = "First Name")]
@@ -37,5 +39,12 @@ namespace Hospital_Management_System.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime? DateOfBirth { get; set; }
         public string Address { get; set; }
+
+
+        public Prescription prescription { get; set; }
+
+        public Appointment Appointment { get; set; }
+
+
     }
 }
