@@ -8,7 +8,7 @@ namespace Hospital_Management_System.Models
 {
     public class Appointment
     {
-        public int Id { get; set; }
+        public int AppointmentId { get; set; }
 
         public Patient Patient { get; set; }
         [Display(Name = "Patient Name")]

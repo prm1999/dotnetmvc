@@ -8,7 +8,7 @@ namespace Hospital_Management_System.Models
 {
     public class Complaint
     {
-        public int Id { get; set; }
+        public int ComplaintId { get; set; }
         [Required]
         public string Complain { get; set; }
         public string Reply { get; set; }

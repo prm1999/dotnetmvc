@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -8,8 +9,9 @@ namespace Hospital_Management_System.Models
 {
     public class Prescription
     {
-        public int Id { get; set; }
+        public int PrescriptionId { get; set; }
 
+        [ForeignKey("Doctor")]
         public Doctor Doctor { get; set; }
         public int DoctorId { get; set; }
 

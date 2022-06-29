@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -8,10 +9,10 @@ namespace Hospital_Management_System.Models
 {
     public class Patient
     {
-        public int Id { get; set; }
+       
 
-       // public ApplicationUser ApplicationUser { get; set; }
-        public string PatientId { get; set; }
+       
+        public int  PatientId { get; set; }
 
         public Doctor Doctor { get; set; }
 
@@ -41,8 +42,10 @@ namespace Hospital_Management_System.Models
         public string Address { get; set; }
 
 
+        [ForeignKey(" Prescription")]
         public Prescription prescription { get; set; }
 
+        [ForeignKey("Appointment")]
         public Appointment Appointment { get; set; }
 
 

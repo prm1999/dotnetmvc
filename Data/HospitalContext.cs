@@ -15,21 +15,5 @@ namespace Hospital.Data
         }
 
         public DbSet<Hospital_Management_System.Models.Doctor> Doctor { get; set; }
-
-        public DbSet<Hospital_Management_System.Models.Patient> Patient { get; set; }
-
-        public DbSet<Hospital_Management_System.Models.Department> Department { get; set; }
-
-        public DbSet<Hospital_Management_System.Models.Reviews> Reviews { get; set; }
-
-        public DbSet<Hospital_Management_System.Models.Schedule> Schedule { get; set; }
-
-        public DbSet<Hospital_Management_System.Models.Medicine> Medicine { get; set; }
-
-        public DbSet<Hospital_Management_System.Models.Prescription> Prescription { get; set; }
-
-        public DbSet<Hospital_Management_System.Models.AmbulanceDriver> AmbulanceDriver { get; set; }
-
-        public DbSet<Hospital_Management_System.Models.Ambulance> Ambulance { get; set; }
     }
 }
