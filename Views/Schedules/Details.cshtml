@@ -3,14 +3,10 @@
 @{
     ViewData["Title"] = "Details";
 }
-<div class="card  bg-success mb-3 text-white" style="max-width: 9rem;">
 
-    <h1>Details</h1>
-</div>
+    <h1 class="text-center">Schedule Details</h1>
 
-    <div class="border border-success">
-        <h4>Schedule</h4>
-        <hr />
+    <div style="margin-left:45%">
         <dl class="row bg-info  text-white border border-success">
             <dt class="col-sm-2 border border-success">
                 @Html.DisplayNameFor(model => model.Doctor)
@@ -56,7 +52,7 @@
             </dd>
         </dl>
     </div>
-    <div>
+    <div class="text-center">
         <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
         <a asp-action="Index">Back to List</a>
     </div>

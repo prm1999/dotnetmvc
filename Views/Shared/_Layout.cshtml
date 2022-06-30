@@ -6,53 +6,61 @@
     <title>@ViewData["Title"] - Hospital</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Layout/resources/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-primary border-bottom box-shadow mb-3 border border-info">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Hospital</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+        
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">Neha Hospital</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item bg-primary text-white">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item text-white bg-secondary  mr-5">
-                            <a class="nav-link text-white " asp-area="" asp-controller="Patients" asp-action="Index">Patients</a>
-                        </li>
 
-                        <li class="nav-item text-white bg-warning mr-5">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Patients" asp-action="Index">Patients</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link  text-white " asp-area="" asp-controller="Doctors" asp-action="Index">Doctors</a>
                         </li>
 
 
-                        <li class="nav-item bg-info mr-5">
+                        <li class="nav-item">
                             <a class="nav-link text-white" asp-area="" asp-controller="Schedules" asp-action="Index">Schedules</a>
                         </li>
 
 
-                        <li class="nav-item bg-danger mr-5">
+                        <li class="nav-item">
                             <a class="nav-link text-white" asp-area="" asp-controller="Reviews" asp-action="Index">Reviews</a>
                         </li>
 
 
-                        <li class="nav-item bg-success mr-5">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Ambulances" asp-action="Index">Ambulance</a>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Ambulances" asp-action="Index">Ambulances</a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Medicines" asp-action="Index">Medicines</a>
                         </li>
                     </ul>
+
                 </div>
-            </div>
+             </div>
         </nav>
     </header>
-    <div class="container">
+
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
-    </div>
+
     <br />
     <footer class="border-top footer text-muted">
         <div class="container">

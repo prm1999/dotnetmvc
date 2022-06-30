@@ -5,6 +5,62 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="Views\AmbulanceDrivers\Create.cshtml" />
+    <None Include="Views\AmbulanceDrivers\Delete.cshtml" />
+    <None Include="Views\AmbulanceDrivers\Details.cshtml" />
+    <None Include="Views\AmbulanceDrivers\Edit.cshtml" />
+    <None Include="Views\AmbulanceDrivers\Index.cshtml" />
+    <None Include="Views\Ambulances\Create.cshtml" />
+    <None Include="Views\Ambulances\Delete.cshtml" />
+    <None Include="Views\Ambulances\Details.cshtml" />
+    <None Include="Views\Ambulances\Edit.cshtml" />
+    <None Include="Views\Ambulances\Index.cshtml" />
+    <None Include="Views\Departments\Create.cshtml" />
+    <None Include="Views\Departments\Delete.cshtml" />
+    <None Include="Views\Departments\Details.cshtml" />
+    <None Include="Views\Departments\Edit.cshtml" />
+    <None Include="Views\Departments\Index.cshtml" />
+    <None Include="Views\Doctors\Create.cshtml" />
+    <None Include="Views\Doctors\Delete.cshtml" />
+    <None Include="Views\Doctors\Details.cshtml" />
+    <None Include="Views\Doctors\Edit.cshtml" />
+    <None Include="Views\Doctors\Index.cshtml" />
+    <None Include="Views\Home\About.cshtml" />
+    <None Include="Views\Home\Contact.cshtml" />
+    <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Home\Privacy.cshtml" />
+    <None Include="Views\Medicines\Create.cshtml" />
+    <None Include="Views\Medicines\Delete.cshtml" />
+    <None Include="Views\Medicines\Details.cshtml" />
+    <None Include="Views\Medicines\Edit.cshtml" />
+    <None Include="Views\Medicines\Index.cshtml" />
+    <None Include="Views\Patients\Create.cshtml" />
+    <None Include="Views\Patients\Delete.cshtml" />
+    <None Include="Views\Patients\Details.cshtml" />
+    <None Include="Views\Patients\Edit.cshtml" />
+    <None Include="Views\Patients\Index.cshtml" />
+    <None Include="Views\Prescriptions\Create.cshtml" />
+    <None Include="Views\Prescriptions\Delete.cshtml" />
+    <None Include="Views\Prescriptions\Details.cshtml" />
+    <None Include="Views\Prescriptions\Edit.cshtml" />
+    <None Include="Views\Prescriptions\Index.cshtml" />
+    <None Include="Views\Reviews\Create.cshtml" />
+    <None Include="Views\Reviews\Delete.cshtml" />
+    <None Include="Views\Reviews\Details.cshtml" />
+    <None Include="Views\Reviews\Edit.cshtml" />
+    <None Include="Views\Reviews\Index.cshtml" />
+    <None Include="Views\Schedules\Create.cshtml" />
+    <None Include="Views\Schedules\Delete.cshtml" />
+    <None Include="Views\Schedules\Details.cshtml" />
+    <None Include="Views\Schedules\Edit.cshtml" />
+    <None Include="Views\Schedules\Index.cshtml" />
+    <None Include="Views\Shared\Error.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Shared\_LoginPartial.cshtml" />
+    <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="bootstrap" Version="3.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.25" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.25" />
